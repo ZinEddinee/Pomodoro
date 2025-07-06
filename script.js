@@ -1,3 +1,7 @@
+function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('open');
+}
+
 let pomodoro = document.getElementById("pomodoro-timer")
 let short = document.getElementById("short-timer")
 let long = document.getElementById("long-timer")
@@ -114,5 +118,3 @@ currentTimer = pomodoro
 remainingTime = 25 * 60 * 1000
 updateTimerDisplay(remainingTime)
 session.classList.add("active")
-
-
