@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>POMODORO</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+
+    <!-- 🚀 Navbar -->
+    <nav>
+        <div class="logo">
+            Pomodoro Timer ⏳
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Pomodoro</a>
+            <a href="#">History</a>
+            <a href="#">Goals</a>
+            <a href="#">Stats</a>
+            <a href="#">Settings</a>
+            <a href="#">Login</a>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- 🎯 Existing Pomodoro Timer -->
     <div id="timer-message">please select a timer before starting</div>
     
     <div class="container">
@@ -19,27 +43,25 @@
                 <button class="button" id="long-break">long break</button>
             </div>
 
-<main>
-<div class="pomodoro">
-    <button id="decrease-time" class="adjust-time">-</button>
-    
-    <div id="pomodoro-timer" class="timer-display" data-duration="25.00" style="display:block;">
-        <h1 class="time">25:00</h1>
-    </div>
+            <main>
+                <div class="pomodoro">
+                    <button id="decrease-time" class="adjust-time">-</button>
+                    
+                    <div id="pomodoro-timer" class="timer-display" data-duration="25.00" style="display:block;">
+                        <h1 class="time">25:00</h1>
+                    </div>
 
-    <div id="short-timer" class="timer-display" data-duration="5.00" style="display:none;">
-        <h1 class="time">5:00</h1>
-    </div>
+                    <div id="short-timer" class="timer-display" data-duration="5.00" style="display:none;">
+                        <h1 class="time">5:00</h1>
+                    </div>
 
-    <div id="long-timer" class="timer-display" data-duration="10.00" style="display:none;">
-        <h1 class="time">10:00</h1>
-    </div>
-    
-    <button id="increase-time" class="adjust-time">+</button>
-</div>
-
-</main>
-
+                    <div id="long-timer" class="timer-display" data-duration="10.00" style="display:none;">
+                        <h1 class="time">10:00</h1>
+                    </div>
+                    
+                    <button id="increase-time" class="adjust-time">+</button>
+                </div>
+            </main>
 
             <div class="buttons">
                 <button id="start">START</button>
@@ -50,5 +72,4 @@
     
     <script src="script.js"></script>
 </body>
-
 </html>
