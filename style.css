@@ -18,9 +18,10 @@ nav {
 }
 
 .nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
-  flex: 1;
   gap: 1.5rem;
   transition: max-height 0.4s ease;
   overflow: hidden;
