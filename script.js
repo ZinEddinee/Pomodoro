@@ -118,3 +118,5 @@ currentTimer = pomodoro
 remainingTime = 25 * 60 * 1000
 updateTimerDisplay(remainingTime)
 session.classList.add("active")
+
+
