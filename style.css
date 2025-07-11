@@ -18,14 +18,14 @@ nav {
 }
 
 .nav-links {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
+  justify-content: center;       
+  flex: 1;
   gap: 1.5rem;
-  transition: max-height 0.4s ease;
+  transition: max-height 0.4s ease; 
   overflow: hidden;
 }
+
 
 .nav-links a {
   color: #d7e0ff;
@@ -243,8 +243,8 @@ h1 {
   }
 
   .logo {
-    margin-left: 1rem;            /* Align with padding */
-    margin-bottom: 0.3rem;        /* Adds a gap below logo */
+    margin-left: 1rem;           
+    margin-bottom: 0.3rem;        
     text-align: left;
     width: 100%;
   }
@@ -252,7 +252,7 @@ h1 {
   .hamburger {
     display: flex;
     flex-direction: column;
-    margin-left: 1rem;            /* Align with the logo's start */
+    margin-left: 1rem;            
     padding: 0;
     background: transparent;
     border: none;
