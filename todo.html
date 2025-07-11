@@ -79,6 +79,19 @@ function showTask(){
 showTask();
   </script>
 
+  <script>
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+
+// ✅ auto close nav on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('open');
+  });
+});
+</script>
+
 </body>
 
 </html>
