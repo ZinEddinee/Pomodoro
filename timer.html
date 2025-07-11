@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Timer</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- 🚀 Navbar (reuse same) -->
+    <nav>
+        <div class="logo">
+            Productivity Timer ⏳
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Pomodoro</a>
+            <a href="timer.html">Task timer</a>
+            <a href="todo.html">To-do-List</a>
+            <a href="#">Stats</a>
+            <a href="#">Settings</a>
+            <a href="#">Login</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div><div></div><div></div>
+        </div>
+    </nav>
+
+    <!-- 🕒 Task Timer -->
+    <div class="container">
+        <div class="timer">
+            <h1>📝 Task Timer</h1>
+            <main>
+                <div class="pomodoro">
+                    <div id="task-timer" class="timer-display">
+                        <h1 class="time">00:00</h1>
+                    </div>
+                </div>
+            </main>
+            <div class="buttons">
+                <button id="start-task">START</button>
+                <button id="stop-task">STOP</button>
+            </div>
+        </div>
+        <div id="task-summary" style="display:none; margin-top:1rem; font-size:1.2rem;"></div>
+    </div>
+
+<script>
+function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('open');
+}
+
+let taskTimer = document.getElementById("task-timer");
+let startTaskBtn = document.getElementById("start-task");
+let stopTaskBtn = document.getElementById("stop-task");
+
+let elapsedTime = 0;
+let timerInterval = null;
+let isPaused = false;
+
+function updateTaskDisplay(ms) {
+    let minutes = Math.floor(ms / 60000);
+    let seconds = Math.floor((ms % 60000) / 1000);
+    taskTimer.querySelector('.time').textContent = 
+        `${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`;
+}
+
+startTaskBtn.addEventListener("click", () => {
+    let startTime = Date.now() - elapsedTime;
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        elapsedTime = Date.now() - startTime;
+        updateTaskDisplay(elapsedTime);
+    }, 1000);
+});
+
+stopTaskBtn.addEventListener("click", () => {
+    clearInterval(timerInterval);
+
+    // compute total time
+    let minutes = Math.floor(elapsedTime / 60000);
+    let seconds = Math.floor((elapsedTime % 60000) / 1000);
+
+    let summary = document.getElementById("task-summary");
+    summary.style.display = "block";
+    summary.textContent = `✅ You spent ${minutes} min ${seconds} sec on this task`;
+});
+
+</script>
+
+</body>
+</html>
