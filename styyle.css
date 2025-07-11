@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-
 * {
   margin: 0;
   padding: 0;
@@ -8,86 +7,104 @@
   font-family: 'Poppins', sans-serif;
 }
 
-  .container{
-    width: 100%;
-    min-height: 100vh;
-    background: #1e213f;
-    padding: 10px;
-  }
+body {
+  background: #1e213f;
+  color: #d7e0ff;
+  min-height: 100vh;
+}
 
-  .todo-app {
-      width: 100%;
-      max-width: 540px;
-      background: #151932;
-      margin: 40px auto 20px;
-      padding: 40px 30px 70px;
-      border-radius: 10px;
-  }
-  
-  .todo-app h2{
-     color: #fff; 
-     display: flex;
-     align-items: center;
-     margin-bottom: 20px;
-  }
-  .todo-app h2 img {
-      width: 30px;
-      margin-left: 10px;
-      background: transparent;
-  }
-  .row{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #edeef0;
-      border-radius: 30px;
-      padding-left: 20px;
-      margin-bottom: 25px;
-  }
-  input{
-      flex: 1;
-      border: none;
-      outline: none;
-      background: transparent;
-      padding: 10px;
-      font-weight: 14px;
-  }
-  button{
-      border: none;
-      outline: none;
-      padding: 16px 50px;
-      background: rgb(49, 49, 184);
-      color: #fff;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 40px;
-  }
-  ul li{
-     list-style: none; 
-     font-size: 17px;
-     color: #fff;
-     padding: 12px 8px 12px 50px;
-     user-select: none;
-     cursor: pointer;
-     position: relative;
-  }
-  ul li::before{
-      content: '';
-      position: absolute;
-      height: 28px;
-      width:  28px;
-      border-radius: 50%;
-      background-image: url(../images/uncheck-32.png);
-      background-size: cover;
-      background-position: center;
-      top: 12px;
-      left: 0px;
-    }
-  ul li.checked{
-    color: #555;
-    text-decoration: line-through;
-  }
+/* === CONTAINER & TODO === */
+.container {
+  width: 100%;
+  padding: 10px;
+}
 
+.todo-app {
+  width: 90%;
+  max-width: 540px;
+  background: #151932;
+  margin: 40px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+}
+
+.todo-app h2 {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.todo-app h2 img {
+  width: 30px;
+  margin-left: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2e325a;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.row input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #d7e0ff;
+  padding: 10px;
+  font-size: 14px;
+  min-width: 200px;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: #6c63ff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #5a52d4;
+}
+
+ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 14px 8px 14px 45px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  line-height: 26px;
+  background: #2e325a;
+  color: #d7e0ff;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  transition: background 0.3s;
+}
+
+ul li.checked {
+  color: #888;
+  text-decoration: line-through;
+  background: #151932;
+}
+
+ul li:hover {
+  background: #3b4075;
+}
+
+/* Checkbox circle */
 ul li::before {
   content: '';
   position: absolute;
@@ -100,6 +117,7 @@ ul li::before {
   transform: translateY(-50%);
 }
 
+/* Checkmark */
 ul li.checked::after {
   content: '✔';
   position: absolute;
@@ -111,26 +129,26 @@ ul li.checked::after {
   font-weight: bold;
 }
 
+ul li span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  color: #d7e0ff;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+}
 
-  ul li span{
-    position: absolute;
-    right: 0;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    color: #555;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
-  
-  }
-  ul li span:hover{
-    background: #edeef0;
-  }
-  
+ul li span:hover {
+  background: #6c63ff;
+  color: white;
+}
 
-  /* === NAVBAR === */
+/* === NAVBAR === */
 nav {
   background: #1e213f;
   color: #d7e0ff;
@@ -149,13 +167,12 @@ nav {
 
 .nav-links {
   display: flex;
-  justify-content: center;       
+  justify-content: center;
   flex: 1;
   gap: 1.5rem;
-  transition: max-height 0.4s ease; 
+  transition: max-height 0.4s ease;
   overflow: hidden;
 }
-
 
 .nav-links a {
   color: #d7e0ff;
@@ -182,56 +199,24 @@ nav {
   border-radius: 2px;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    max-height: 0;
-    background: #1e213f;
-  }
-
-  .nav-links.open {
-    max-height: 300px;
-    padding-bottom: 1rem;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
-    align-items: flex-start; /* Align everything to the left */
-    padding: 1rem;
-    margin: 0;
+    align-items: flex-start;
     width: 100vw;
   }
 
   .logo {
-    margin-left: 1rem;           
-    margin-bottom: 0.3rem;        
-    text-align: left;
+    margin-left: 1rem;
+    margin-bottom: 0.3rem;
     width: 100%;
+    text-align: left;
   }
 
   .hamburger {
     display: flex;
-    flex-direction: column;
-    margin-left: 1rem;            
-    padding: 0;
-    background: transparent;
-    border: none;
-    z-index: 1000;
-    position: relative;
+    margin-left: 1rem;
   }
 
   .nav-links {
@@ -241,7 +226,6 @@ nav {
     max-height: 0;
     background: #1e213f;
     overflow: hidden;
-    transition: max-height 0.4s ease;
   }
 
   .nav-links.open {
@@ -253,6 +237,16 @@ nav {
     width: 100%;
     text-align: center;
     padding: 1rem 0;
-    box-sizing: border-box;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 20px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
   }
 }
