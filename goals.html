@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Goals - Pomodoro</title>
+  <link rel="stylesheet" href="goals.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    
+    <nav>
+        <div class="logo">
+            Productivity Timer ⏳
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Pomodoro</a>
+            <a href="timer.html">Task timer</a>
+            <a href="todo.html">To-do-List</a>
+            <a href="goals.html">Goals</a>
+            <a href="history.html">History</a>
+            <a href="login.html">Login</a>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+  <div class="page-content">
+    <div class="goals-container">
+      <div class="goal-card" data-type="weekly">
+        <h2>Weekly Goals</h2>
+        <p>Set small, achievable goals for this week.</p>
+        <div class="goal-section"></div>
+      </div>
+      <div class="goal-card" data-type="monthly">
+        <h2>Monthly Goals</h2>
+        <p>Track broader goals that require more consistency.</p>
+        <div class="goal-section"></div>
+      </div>
+      <div class="goal-card" data-type="yearly">
+        <h2>Yearly / Long-Term Goals</h2>
+        <p>Focus on the big picture for long-term success.</p>
+        <div class="goal-section"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="goals.js"></script>
+</body>
+</html>
