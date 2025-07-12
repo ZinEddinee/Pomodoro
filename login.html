@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productivity Timer</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+
+     <!-- 🚀 Navbar -->
+    <nav>
+        <div class="logo">
+            Productivity Timer ⏳
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Pomodoro</a>
+            <a href="timer.html">Task timer</a>
+            <a href="todo.html">To-do-List</a>
+            <a href="#">Stats</a>
+            <a href="#">History</a>
+            <a href="login.html">Login</a>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="login-container">
+            <form class="login-form">
+                <h2>Login to Pomodoro</h2>
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
+                <button type="submit">Login</button>
+                <p class="register-link">Don't have an account? <a href="#">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+</script>
+
+</body>
+
+</html>
