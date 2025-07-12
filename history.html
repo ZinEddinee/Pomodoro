@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>History - Pomodoro</title>
+  <link rel="stylesheet" href="history.css" />
+</head>
+<body>
+
+    <!-- 🚀 Navbar -->
+    <nav>
+        <div class="logo">
+            Productivity Timer ⏳
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Pomodoro</a>
+            <a href="timer.html">Task timer</a>
+            <a href="todo.html">To-do-List</a>
+            <a href="#">Stats</a>
+            <a href="#">History</a>
+            <a href="login.html">Login</a>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+  <div class="page-content">
+    <div class="history-container">
+      <h2>Pomodoro History</h2>
+      <ul class="history-list" id="pomodoro-history">
+        <!-- JS will fill -->
+      </ul>
+
+      <h2>Timer History</h2>
+      <ul class="history-list" id="timer-history">
+        <!-- JS will fill -->
+      </ul>
+
+      <h2>Goals History</h2>
+      <ul class="history-list" id="goals-history">
+        <li>No goals tracked yet. Coming soon!</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Example data (replace with localStorage or backend data)
+    const pomodoroData = [
+      { date: 'July 12', duration: '25 min', status: 'Completed' },
+      { date: 'July 11', duration: '25 min', status: 'Stopped Early' },
+    ];
+
+    const timerData = [
+      { date: 'July 10', duration: '50 min', status: 'Completed' },
+      { date: 'July 09', duration: '40 min', status: 'Completed' },
+    ];
+
+    function renderHistory(listId, data) {
+      const list = document.getElementById(listId);
+      if (data.length === 0) {
+        list.innerHTML = "<li>No history yet.</li>";
+        return;
+      }
+      data.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.date} - ${item.duration} - ${item.status}`;
+        list.appendChild(li);
+      });
+    }
+
+    renderHistory('pomodoro-history', pomodoroData);
+    renderHistory('timer-history', timerData);
+  </script>
+</body>
+</html>
